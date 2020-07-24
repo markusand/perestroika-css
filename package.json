@@ -1,0 +1,39 @@
+{
+ "name": "perestroika-css",
+ "version": "1.0.0",
+ "description": "Reform for a classless styling system",
+ "main": "css/perestroika.min.css",
+ "scripts": {
+  "build": "sass scss/main.scss:css/perestroika.min.css && postcss css/perestroika.min.css --replace --use postcss-import autoprefixer cssnano"
+ },
+ "keywords": [
+  "css",
+  "scss",
+  "classless"
+ ],
+ "author": "Marc Vilella",
+ "license": "MIT",
+ "repository": {
+  "type": "git",
+  "url": "https://github.com/markusand/perestroika-css"
+ },
+ "bugs": {
+  "url": "https://github.com/markusand/perestroika-css/issues"
+ },
+ "homepage": "https://github.com/markusand/perestroika-css",
+ "dependencies": {
+  "reset-css": "^5.0.1",
+  "sass": "^1.26.10"
+ },
+ "devDependencies": {
+  "autoprefixer": "^9.8.5",
+  "cssnano": "^4.1.10",
+  "postcss-cli": "^7.1.1",
+  "postcss-import": "^12.0.1",
+  "stylelint": "^13.6.1",
+  "stylelint-config-rational-order": "^0.1.2",
+  "stylelint-config-standard": "^20.0.0",
+  "stylelint-order": "^4.1.0",
+  "stylelint-scss": "^3.18.0"
+ }
+}
