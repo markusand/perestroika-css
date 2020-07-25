@@ -7,6 +7,11 @@
 	<title>HTML5 Test Page with Perestroika CSS</title>
 	<link rel="stylesheet" href="css/perestroika.min.css">
 	<style>
+		.box {
+			background: #f0f0f0;
+			border-radius: 3px;
+			padding: 10px;
+		}
 		.heart {
 			display: inline-block;
 			position: relative;
@@ -36,6 +41,7 @@
 		<p>This is a test page filled with common HTML elements to be used to provide visual feedback whilst building CSS systems and frameworks.</p>
 		<nav>
 			<ul>
+				<li><a href="#layout"/>Layout</a></li>
 				<li>
 					<a href="#typography">Typography</a>
 					<ul>
@@ -64,6 +70,42 @@
 		</nav>
 	</header>
 	<main>
+		<section id="layout">
+			<header>
+				<h2>Layout</h2>
+				<aside><a href="#top">[Top]</a></aside>
+			</header>
+			<article>
+				<header>
+					<h3>Grid</h3>
+					<aside><a href="#top">[Top]</a></aside>
+				</header>
+				<div class="row">
+					<div class="col col--1"><div class="box"></div></div>
+					<div class="col col--auto"><div class="box"></div></div>
+				</div>
+				<div class="row">
+					<div class="col col--2"><div class="box"></div></div>
+					<div class="col col--auto"><div class="box"></div></div>
+				</div>
+				<div class="row">
+					<div class="col col--3"><div class="box"></div></div>
+					<div class="col col--auto"><div class="box"></div></div>
+				</div>
+				<div class="row">
+					<div class="col col--4"><div class="box"></div></div>
+					<div class="col col--auto"><div class="box"></div></div>
+				</div>
+				<div class="row">
+					<div class="col col--5"><div class="box"></div></div>
+					<div class="col col--auto"><div class="box"></div></div>
+				</div>
+				<div class="row">
+					<div class="col col--6"><div class="box"></div></div>
+					<div class="col col--auto"><div class="box"></div></div>
+				</div>
+			</article>
+		</section>
 		<section id="typography">
 			<header>
 				<h2>Typography</h2>

@@ -1,0 +1,22 @@
+@use 'sass:math';
+
+.row {
+	display: flex;
+	flex-direction: row;
+	margin: $grid-spacing $grid-spacing / -2;
+
+	&--reverse { flex-direction: row-reverse; }
+
+	.col {
+		position: relative;
+		box-sizing: border-box;
+		max-height: 100%;
+		padding: 0 $grid-spacing / 2;
+
+		@for $i from 1 through 12 {
+			&--#{$i} { flex: 0 0 math.percentage($i / 12); }
+		}
+
+		&--auto { flex: 1; }
+	}
+}
