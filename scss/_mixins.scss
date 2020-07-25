@@ -5,6 +5,7 @@
 	border-color: $bg;
 
 	&:hover {
+		color: if($txt == #fff, $txt, darken($txt, 10%));
 		background-color: darken($bg, 7.5%);
 		border-color: darken($bg, 10%);
 	}
@@ -55,6 +56,7 @@
 	text-transform: uppercase;
 }
 
+/* Component group (input & buttons) */
 @mixin group {
 	position: relative;
 	display: inline-flex;

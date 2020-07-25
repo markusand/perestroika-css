@@ -26,12 +26,14 @@ button {
 	}
 }
 
-input[type=reset] {
-	color: $color-primary !important;
-	background-color: transparent !important;
-	border: $border !important;
-	border-color: transparent !important;
+/* BUTTON VARIANTS ------------------------------------------------------ */
+button.is-alert { @include btn-color($color-error, #fff); }
 
-	&:hover { color: darken($color-primary, 10%) !important; }
-	&:active { color: darken($color-primary, 20%) !important; }
+button.is-flat,
+input[type=reset] { @include btn-color(transparent, $color-primary); }
+
+button.is-ghost {
+	@include btn-color($color-primary, $color-primary);
+
+	background-color: transparent !important;
 }
