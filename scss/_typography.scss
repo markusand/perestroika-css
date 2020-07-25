@@ -1,0 +1,152 @@
+:root { font-size: $font-size; }
+
+body {
+	font-weight: 300;
+	font-size: 1rem;
+	font-family: $font-family;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: $spacing auto;
+	color: inherit;
+	font-weight: 500;
+	font-family: inherit;
+	line-height: 1.2;
+}
+
+h1 { font-size: $size-xxxl; }
+h2 { font-size: $size-xxl; }
+h3 { font-size: $size-xl; }
+h4 { font-size: $size-l; }
+h5 { font-size: $size-m; }
+h6 { font-size: $size; }
+
+hgroup * + * {
+	margin-top: -$spacing;
+	color: $font-color--secondary;
+}
+
+p { margin: $spacing auto; }
+
+a {
+	position: relative;
+	display: inline-block;
+	color: $link-color;
+	font-weight: bold;
+	text-decoration: none;
+
+	&:hover { color: $link-color--hover !important; }
+	&:active { color: $link-color--active !important; }
+}
+
+small { font-size: $font-size--small; }
+
+big { font-size: $font-size--big; }
+
+b,
+strong { font-weight: bold; }
+
+em,
+i { font-style: italic; }
+
+u { text-decoration: underline; }
+
+s { text-decoration: line-through; }
+
+sup {
+	font-size: $font-size--small;
+	vertical-align: super;
+}
+
+sub {
+	font-size: $font-size--small;
+	vertical-align: sub;
+}
+
+kbd {
+	display: inline-flex;
+	align-items: center;
+	margin: $size-xxs / 2;
+	padding: $size-xxs;
+	color: darken($grey, 10%);
+	font-size: 0.8rem;
+	vertical-align: middle;
+	border: $border;
+	border-radius: $radius;
+}
+
+mark { // May be used for tags
+	@extend kbd;
+
+	color: $color-primary;
+	background: lighten($color-primary, 30%);
+	border: 1px solid $color-primary;
+
+	&:hover { background: lighten($color-primary, 27%); }
+
+	small {
+		margin-left: $size-xxs;
+		cursor: pointer;
+		opacity: 0.8;
+	}
+}
+
+code {
+	display: block;
+	margin: $spacing auto;
+	padding: $size-s $size-m;
+	overflow: auto;
+	color: darken($grey, 50%);
+	font-size: 0.9em;
+	font-family: monospace;
+	line-height: 1.75;
+	white-space: pre-line;
+	tab-size: 4;
+	background-color: $grey--lightest;
+	border: $border;
+	border-left: 3px solid $color-primary;
+	border-radius: $radius;
+	counter-reset: line;
+}
+
+cite {
+	color: $font-color;
+	font-weight: bold;
+	font-size: $font-size;
+	font-style: italic;
+}
+
+blockquote {
+	padding: $spacing 2.5 * $spacing;
+	color: $font-color--secondary;
+	font-size: $size-l;
+	background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path fill="#{$grey--lightest}" d="M4.583 17.321C3.553 16.227 3 15 3 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311 1.804.167 3.226 1.648 3.226 3.489a3.5 3.5 0 0 1-3.5 3.5c-1.073 0-2.099-.49-2.748-1.179zm10 0C13.553 16.227 13 15 13 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311 1.804.167 3.226 1.648 3.226 3.489a3.5 3.5 0 0 1-3.5 3.5c-1.073 0-2.099-.49-2.748-1.179z"/></svg>');
+	background-repeat: no-repeat;
+	background-position: $spacing / 2 $spacing / 2;
+	background-size: 3 * $spacing;
+
+	cite::before {
+		display: inline-block;
+		width: $size-xl;
+		height: 2px;
+		margin-right: $size-xs;
+		vertical-align: middle;
+		background: currentColor;
+		content: '';
+	}
+}
+
+q {
+	@extend blockquote;
+
+	margin: 0 0 0 $size-xs;
+	padding: 0 0 0 $size-l;
+	font-size: $size-m;
+	background-position: 0 0;
+	background-size: $size-m;
+}

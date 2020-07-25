@@ -1,0 +1,105 @@
+/* IMAGES ----------------------------------------------------------- */
+img {
+	max-width: 100%;
+	height: auto;
+	vertical-align: baseline;
+
+	main > &,
+	article > &,
+	section > &,
+	aside > & { margin: $spacing auto; }
+
+	button > &,
+	label > em > & {
+		display: inline-block;
+		width: auto;
+		height: 1em;
+		vertical-align: bottom;
+	}
+}
+
+figure {
+	margin: $spacing auto;
+	text-align: center;
+
+	figcaption {
+		margin: $size-xxs auto;
+		color: $font-color--secondary;
+		font-size: $size-s;
+	}
+}
+
+/* EMBED CONTENT ---------------------------------------------------- */
+embed,
+iframe,
+video {
+	max-width: 100%;
+	margin: $spacing auto;
+	border: 0;
+}
+
+/* METER ------------------------------------------------------------ */
+@mixin bar($color) {
+	background: $color;
+	border-radius: $radius;
+}
+
+meter {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: $bar-height;
+	margin: calc(#{$spacing} + #{$font-size} + #{$size-xxs}) auto $spacing;
+	background: $grey--lightest;
+	border-radius: $radius;
+	appearance: none;
+
+	&::-webkit-meter-bar {
+		background: none; /* Required to get rid of the default background property */
+		background-color: $grey--lightest;
+		border-radius: $radius;
+	}
+
+	&:-moz-meter-optimum::-moz-meter-bar { @include bar($color-primary); }
+	&::-webkit-meter-optimum-value { @include bar($color-primary); }
+
+	&:-moz-meter-sub-optimum::-moz-meter-bar { @include bar($color-warning); }
+	&::-webkit-meter-suboptimum-value { @include bar($color-warning); }
+
+	&:-moz-meter-sub-sub-optimum::-moz-meter-bar { @include bar($color-error); }
+	&::-webkit-meter-even-less-good-value { @include bar($color-error); }
+
+	&::before {
+		position: absolute;
+		bottom: 100%;
+		margin-bottom: $size-xxs;
+		content: attr(data-title);
+	}
+
+	&::after {
+		position: absolute;
+		right: 0;
+		bottom: 100%;
+		margin-bottom: $size-xxs;
+		color: $font-color--secondary;
+		font-size: $font-size--small;
+		content: attr(data-value);
+	}
+}
+
+/* PROGRESS --------------------------------------------------------- */
+progress {
+	display: block;
+	width: 100%;
+	height: $bar-height;
+	vertical-align: middle;
+	background-color: $grey--lightest;
+	border: 0;
+	border-radius: $radius;
+	appearance: none;
+
+	&::-webkit-progress-bar { @include bar($grey--lightest); }
+
+	&::-moz-progress-bar { @include bar($color-primary); }
+	&::-webkit-progress-value { @include bar($color-primary); }
+}

@@ -1,0 +1,127 @@
+/* Set a button color (and its different states) */
+@mixin btn-color($bg, $txt) {
+	color: $txt;
+	background-color: $bg;
+	border-color: $bg;
+
+	&:hover {
+		background-color: darken($bg, 7.5%);
+		border-color: darken($bg, 10%);
+	}
+
+	:checked + &,
+	&:active {
+		color: if($txt == #fff, #fff, darken($txt, 15%));
+		background-color: darken($bg, 15%);
+		border-color: darken($bg, 20%);
+	}
+}
+
+/* Add a chevron icon for dropdown elements */
+@mixin chevron-down {
+	padding-right: 1.75em;
+	background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="#{$grey--light}" d="M12 13.172l4.95-4.95 1.414 1.414L12 16 5.636 9.636 7.05 8.222z"/></svg>');
+	background-repeat: no-repeat;
+	background-position: calc(100% - 0.5em) center;
+	background-size: 1em;
+}
+
+/* Add invalid status yle */
+@mixin invalid {
+	color: $color-error !important;
+	background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path fill="#{$color-error}" d="M12.866 3l9.526 16.5a1 1 0 0 1-.866 1.5H2.474a1 1 0 0 1-.866-1.5L11.134 3a1 1 0 0 1 1.732 0zm-8.66 16h15.588L12 5.5 4.206 19zM11 16h2v2h-2v-2zm0-7h2v5h-2V9z"/></svg>');
+	background-repeat: no-repeat;
+	background-position: calc(100% - #{$size-xs}) center !important;
+	background-size: $size !important;
+	border-color: $color-error !important;
+	animation: explode-error 0.5s forwards;
+}
+
+/* Add disabled status style */
+@mixin disabled {
+	color: darken($color-disabled, 17%);
+	background-color: $color-disabled;
+	border-color: $color-disabled;
+	cursor: not-allowed;
+}
+
+/* Style form labels */
+@mixin label {
+	display: block;
+	margin: 0 0.25em 0.5em;
+	color: $label-txt-color;
+	font-size: $label-txt-size;
+	font-style: normal;
+	text-transform: uppercase;
+}
+
+@mixin group {
+	position: relative;
+	display: inline-flex;
+	align-items: stretch;
+	margin: $input-margin;
+	vertical-align: $input-valign;
+
+	& > input,
+	& > select,
+	& > textarea,
+	& > em,
+	& > button,
+	& > label {
+		margin: 0 !important;
+
+		&:not(:first-child) {
+			border-top-left-radius: 0;
+			border-bottom-left-radius: 0;
+		}
+
+		&:not(:last-child) {
+			border-right: 0;
+			border-top-right-radius: 0;
+			border-bottom-right-radius: 0;
+		}
+	}
+
+	&:focus-within {
+		& > input,
+		& > select { border-color: $color-primary; }
+		& > legend { color: $color-primary; }
+
+		& > em {
+			color: $color-primary;
+			background-color: lighten($color-primary, 25%);
+			border-color: $color-primary;
+		}
+	}
+
+	& > input:focus + *,
+	& > *:focus-within + * { border-left-color: $color-primary !important; }
+
+	& > input:invalid + * { border-left-color: $color-error; }
+
+	legend {
+		@include label;
+
+		& + * {
+			border-top-left-radius: $radius !important;
+			border-bottom-left-radius: $radius !important;
+		}
+	}
+
+	& > em {
+		position: relative;
+		color: $grey--light;
+		background-color: $grey--lightest;
+	}
+
+	i {
+		display: inline-block;
+		vertical-align: bottom;
+	}
+}
+
+@mixin block {
+	display: block;
+	width: 100%;
+	margin: $spacing auto;
+}

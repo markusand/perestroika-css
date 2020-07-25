@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>HTML5 Test Page with Perestroika CSS</title>
+	<link rel="stylesheet" href="css/perestroika.min.css">
+	<style>
+		.heart {
+			display: inline-block;
+			position: relative;
+			width: 0.6em;
+			height: 0.6em;
+			background: #f65;;
+			margin: 0 0.3em;
+			transform: rotate(-45deg);
+		}
+		.heart::before,
+		.heart::after {
+			content: '';
+			position: absolute;
+			width: 0.6em;
+			height: 0.6em;
+			border-radius: 0.6em;
+			background: #f65;
+		}
+		.heart::before { bottom: 0.3em; }
+		.heart::after { left: 0.3em; }
+	</style>
+</head>
+
+<body>
+	<header id="top">
+		<h1>HTML5 Test Page</h1>
+		<p>This is a test page filled with common HTML elements to be used to provide visual feedback whilst building CSS systems and frameworks.</p>
+		<nav>
+			<ul>
+				<li>
+					<a href="#typography">Typography</a>
+					<ul>
+						<li><a href="#typography__headings">Headings</a></li>
+						<li><a href="#typography__paragraph">Paragraph</a></li>
+						<li><a href="#typography__text">Text</a></li>
+						<li><a href="#typography__buttons">Buttons</a></li>
+						<li><a href="#typography__quotation">Quotation</a></li>
+						<li><a href="#typography__code">Code</a></li>
+					</ul>
+				</li>
+				<li><a href="#lists">Lists</a></li>
+				<li><a href="#tables">Tables</a></li>
+				<li>
+					<a href="#media">Media</a>
+					<ul>
+						<li><a href="#media__images">Images</a></li>
+						<li><a href="#media__audio">Audio</a></li>
+						<li><a href="#media__video">Video</a></li>
+						<li><a href="#media__meter">Meter</a></li>
+						<li><a href="#media__progress">Progress</a></li>
+					</ul>
+				</li>
+				<li><a href="#forms">Form elements</a></li>
+			</ul>
+		</nav>
+	</header>
+	<main>
+		<section id="typography">
+			<header>
+				<h2>Typography</h2>
+			</header>
+			<article id="typography__headings">
+				<header>
+					<h3>Headings</h3>
+				</header>
+				<div>
+					<h1>Heading 1</h1>
+					<h2>Heading 2</h2>
+					<h3>Heading 3</h3>
+					<h4>Heading 4</h4>
+					<h5>Heading 5</h5>
+					<h6>Heading 6</h6>
+					<hgroup>
+						<h3>Group Heading 3</h3>
+						<h5>Group Subheading 5</h5>
+					</hgroup>
+				</div>
+				<footer>
+					<p><a href="#top">[Top]</a></p>
+				</footer>
+			</article>
+			<article id="typography__paragraph">
+				<header>
+					<h3>Paragraph</h3>
+				</header>
+				<div>
+					<p>A paragraph (from the Greek paragraphos, “to write beside” or “written beside”) is a self-contained unit of a discourse in writing dealing with a particular point or idea.</p>
+					<p>A paragraph consists of one or more sentences. Though not required by the syntax of any language, paragraphs are usually an expected part of formal writing, used to organize longer prose.</p>
+				</div>
+				<footer>
+					<p><a href="#top">[Top]</a></p>
+				</footer>
+			</article>
+			<article id="typography__text">
+				<header>
+					<h3>Text</h3>
+				</header>
+				<div>
+					<p><a href="#!">This is a text link</a>.</p>
+					<p><strong>Strong is used to indicate strong importance.</strong></p>
+					<p><em>This text has added emphasis.</em></p>
+					<p>The <b>b element</b> is stylistically different text from normal text, without any special importance.</p>
+					<p>The <i>i element</i> is text that is offset from the normal text.</p>
+					<p>The <u>u element</u> is text with an unarticulated, though explicitly rendered, non-textual annotation.</p>
+					<p><del>This text is deleted</del> and <ins>This text is inserted</ins>.</p>
+					<p><s>This text has a strikethrough</s>.</p>
+					<p>Superscript<sup>®</sup>.</p>
+					<p>Subscript for things like H<sub>2</sub>O.</p>
+					<p><small>This small text is small for fine print, etc.</small></p>
+					<p>Abbreviation: <abbr title="HyperText Markup Language">HTML</abbr></p>
+					<p>The <dfn>dfn element</dfn> indicates a definition.</p>
+					<p>The <mark>mark element</mark> indicates a highlight.</p>
+					<p>The <var>variable element</var>, such as <var>x</var> = <var>y</var>.</p>
+					<p>The time element: <time datetime="2013-04-06T12:32+00:00">2 weeks ago</time></p>
+				</div>
+				<footer>
+					<p><a href="#top">[Top]</a></p>
+				</footer>
+			</article>
+			<article id="typography__buttons">
+				<header>
+					<h3>Buttons</h3>
+				</header>
+				<button>Button</button>
+				<button disabled>Disabled</button>
+				<fieldset>
+					<button>First</button>
+					<button>Second</button>
+					<button>Third</button>
+				</fieldset>
+				<footer>
+					<p><a href="#top">[Top]</a></p>
+				</footer>
+			</article>
+			<article id="typography__quotation">
+				<header>
+					<h3>Quotation</h3>
+				</header>
+				<div>
+					<blockquote cite="">
+						<p>A block quotation (also known as a long quotation or extract) is a quotation in a written document, that is set off from the main text as a paragraph, or block of text.</p>
+						<p>It is typically distinguished visually using indentation and a different typeface or smaller size quotation. It may or may not include a citation, usually placed at the bottom.</p>
+						<cite>Said no one, ever.</cite>
+					</blockquote>
+					<p>Somebody said, supposedly <q cite="https://developer.mozilla.org/en-US/docs/HTML/Element/q">This text is a short inline quotation.</q></p>
+					<p><cite>This is a citation.</cite></p>
+				</div>
+				<footer>
+					<p><a href="#top">[Top]</a></p>
+				</footer>
+			</article>
+			<article id="typography__code">
+				<header>
+					<h3>Code</h3>
+				</header>
+				<div>
+					<p><strong>Pre-formatetd text:</strong></p>
+					<pre>P R E F O R M A T T E D T E X T
+! " # $ % &amp; ' ( ) * + , - . /
+0 1 2 3 4 5 6 7 8 9 : ; &lt; = &gt; ?
+@ A B C D E F G H I J K L M N O
+P Q R S T U V W X Y Z [ \ ] ^ _
+` a b c d e f g h i j k l m n o
+p q r s t u v w x y z { | } ~ </pre>
+					<p><strong>Keyboard input:</strong> <kbd>⌘</kbd> + <kbd>F8</kbd></p>
+					<p><strong>Code:</strong></p>
+					<code>mkdir awesome-project
+						cd awesome-project
+						npm init
+						npm install perestroika-css
+					</code>
+					<code><pre>import { countries, flags } from './resources';
+const stats = countries.map((country) => {
+	const { [country]: flag } = flags;
+	const gdp_per_capita = country.gdp / country.population;
+	return { ...country, flag, gdp_per_capita };
+});</pre></code>
+					<p><strong>Sample output:</strong> <samp>This is sample output from a computer program.</samp></p>
+				</div>
+				<footer>
+					<p><a href="#top">[Top]</a></p>
+				</footer>
+			</article>
+		</section>
+		<section id="lists">
+			<header>
+				<h2>Lists</h2>
+			</header>
+			<article>
+				<h3>Definition lists</h3>
+				<dl>
+					<dt>Definition title</dt>
+					<dd>The dd tag is used to describe a term/name in a description list. is used in conjunction with <em>dl</em> to define a description list and <em>dt</em> to define terms/names.</dd>
+					<dt>Definition title</dt>
+					<dd>The dd tag is used to describe a term/name in a description list. is used in conjunction with <em>dl</em> to define a description list and <em>dt</em> to define terms/names.</dd>
+				</dl>
+				<h3>Ordered List</h3>
+				<ol>
+					<li>
+						List Item
+						<ol>
+							<li>List Item</li>
+							<li>List Item</li>
+						</ol>
+					</li>
+					<li>List Item</li>
+					<li>List Item</li>
+				</ol>
+				<h3>Unordered List</h3>
+				<ul>
+					<li>
+						List Item
+						<ul>
+							<li>List Item</li>
+							<li>List Item</li>
+						</ul>
+					</li>
+					<li>List Item</li>
+					<li>List Item</li>
+				</ul>
+				<h3>Details</h3>
+				<details>
+					<summary>Disclosure summary</summary>
+					<div>The Disclosure Summary element specifies a summary, caption, or legend for a details element's disclosure box. Clicking the summary element toggles the state of the parent details element open and closed.</div>
+				</details>
+				<footer>
+					<p><a href="#top">[Top]</a></p>
+				</footer>
+			</article>
+		</section>
+		<section id="typography__tables">
+			<header>
+				<h2>Tables</h2>
+			</header>
+			<article>
+				<table>
+					<caption>Table Caption</caption>
+					<thead>
+						<tr>
+							<th>Table Heading 1</th>
+							<th>Table Heading 2</th>
+							<th>Table Heading 3</th>
+							<th>Table Heading 4</th>
+							<th>Table Heading 5</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Table Cell 1</td>
+							<td>Table Cell 2</td>
+							<td>Table Cell 3</td>
+							<td>Table Cell 4</td>
+							<td>Table Cell 5</td>
+						</tr>
+						<tr>
+							<td>Table Cell 1</td>
+							<td>Table Cell 2</td>
+							<td>Table Cell 3</td>
+							<td>Table Cell 4</td>
+							<td>Table Cell 5</td>
+						</tr>
+						<tr>
+							<td>Table Cell 1</td>
+							<td>Table Cell 2</td>
+							<td>Table Cell 3</td>
+							<td>Table Cell 4</td>
+							<td>Table Cell 5</td>
+						</tr>
+						<tr>
+							<td>Table Cell 1</td>
+							<td>Table Cell 2</td>
+							<td>Table Cell 3</td>
+							<td>Table Cell 4</td>
+							<td>Table Cell 5</td>
+						</tr>
+					</tbody>
+					<tfoot>
+						<tr>
+							<th>Table Footer 1</th>
+							<th>Table Footer 2</th>
+							<th>Table Footer 3</th>
+							<th>Table Footer 4</th>
+							<th>Table Footer 5</th>
+						</tr>
+					</tfoot>
+				</table>
+				<footer>
+					<p><a href="#top">[Top]</a></p>
+				</footer>
+			</article>
+		</section>
+		<section id="media">
+			<header>
+				<h2>Media</h2>
+			</header>
+			<article id="media__images">
+				<header>
+					<h3>Images</h3>
+				</header>
+				<div>
+					<p><img src="https://via.placeholder.com/1024" alt="Image alt text" /></p>
+					<figure>
+						<img src="https://via.placeholder.com/600" alt="Image alt text" />
+						<figcaption>Here is a caption for this image.</figcaption>
+					</figure>
+				</div>
+				<footer>
+					<p><a href="#top">[Top]</a></p>
+				</footer>
+			</article>
+			<article id="media__audio">
+				<header>
+					<h3>Audio</h3>
+				</header>
+				<div>
+					<audio controls>
+						<source src="https://www.w3schools.com/html/horse.ogg" type="audio/ogg">
+						<source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg">
+						Your browser does not support the audio element.
+					</audio>
+				</div>
+				<footer>
+					<p><a href="#top">[Top]</a></p>
+				</footer>
+			</article>
+			<article id="media__video">
+				<header>
+					<h3>Video</h3>
+				</header>
+				<div>
+					<video controls>
+						<source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+						<source src="https://www.w3schools.com/html/mov_bbb.ogg" type="video/ogg">
+						Your browser does not support the video tag.
+					</video>
+				</div>
+				<footer>
+					<p><a href="#top">[Top]</a></p>
+				</footer>
+			</article>
+			<article id="media__meter">
+				<header>
+					<h3>Meter</h3>
+				</header>
+				<div>
+					<meter min="0" max="10" low="3" high="7" optimum="6" value="6" data-title="Meter title" data-value="4TB free out of 10TB"></meter>
+					<meter min="0" max="10" low="3" high="7" optimum="6" value="8" data-title="Meter title" data-value="2TB free out of 10TB"></meter>
+					<meter min="0" max="10" low="3" high="7" optimum="2" value="8" data-title="Meter title" data-value="2TB free out of 10TB"></meter>
+					<meter min="0" max="10" low="3" high="7" optimum="6" value="2" data-title="Meter title" data-value="8TB free out of 10TB"></meter>
+					<meter min="0" max="10" low="3" high="7" optimum="8" value="2" data-title="Meter title" data-value="8TB free out of 10TB"></meter>
+				</div>
+				<footer>
+					<p><a href="#top">[Top]</a></p>
+				</footer>
+			</article>
+			<article id="media__progress">
+				<header>
+					<h3>Progress</h3>
+				</header>
+				<p>
+					<progress max="250" value="100"></progress>
+				</p>
+				<footer>
+					<p><a href="#top">[Top]</a></p>
+				</footer>
+			</article>
+		</section>
+		<section id="forms">
+			<header>
+				<h2>Form elements</h2>
+			</header>
+			<form>
+				<article id="forms__input">
+					<p>
+						<input id="input__search" type="search" placeholder="Search">
+					</p>
+					<label>
+						<em>Text</em>
+						<input type="text" placeholder="Text Input" />
+					</label>
+					<label>
+						<em>Password</em>
+						<input type="password" placeholder="Type your password" />
+					</label>
+					<label>
+						<em>Web address</em>
+						<input type="url" placeholder="http://yoursite.com" />
+					</label>
+					<label>
+						<em>Email</em>
+						<input type="email" placeholder="name@email.con" />
+					</label>
+					<label>
+						<em>Phone</em>
+						<input type="tel" placeholder="(999) 999-9999" />
+					</label>
+					<label>
+						<em>Number</em>
+						<input type="number" placeholder="Enter a number" min="0" max="1000" value="523" />
+					</label>
+					<label>
+						<em>Color</em>
+						<input type="color" value="#000000" />
+					</label>
+					<label>
+						<em>Required</em>
+						<input type="text" placeholder=" " required />
+					</label>
+					<label>
+						<em>Disabled</em>
+						<input type="text" disabled />
+					</label>
+					<fieldset>
+						<legend>Labeled</legend>
+						<em>Label</em>
+						<input type="text" size="14" />
+					</fieldset>
+					<label>
+						<em>Select</em>
+						<select id="select">
+							<option selected disabled>Select an option</option>
+							<option>Option One</option>
+							<option>Option Two</option>
+							<option>Option Three</option>
+							<optgroup label="Option Group">
+								<option>Option One</option>
+								<option>Option Two</option>
+								<option>Option Three</option>
+							</optgroup>
+						</select>
+					</label>
+					<fieldset>
+						<legend>Checkboxes</legend>
+						<label>
+							<input name="checkbox" type="checkbox" checked />
+							<span>Choice A</span>
+						</label>
+						<label>
+							<input name="checkbox" type="checkbox" />
+							<span>Choice B</span>
+						</label>
+						<label>
+							<input name="checkbox" type="checkbox" />
+							<span>Choice C</span>
+						</label>
+					</fieldset>
+					<fieldset>
+						<legend>Radio buttons</legend>
+						<label>
+							<input name="radio" type="radio" checked />
+							<span>Choice A</span>
+						</label>
+						<label>
+							<input name="radio" type="radio" />
+							<span>Choice B</span>
+						</label>
+						<label>
+							<input name="radio" type="radio" />
+							<span>Choice C</span>
+						</label>
+					</fieldset>
+					<label>
+						<em>Textarea</em>
+						<textarea rows="4" cols="85" placeholder="Enter your message here"></textarea>
+					</label>
+					<p>
+						<label>
+							<em>Range</em>
+							<input type="range" value="30" min="0" max="100">
+						</label>
+					</p>
+				</article>
+				<p>
+					<input type="submit" value="Submit">
+					<input type="button" value="Button">
+					<input type="reset" value="Reset">
+					<input type="submit" value="Submit disabled" disabled>
+				</p>
+				<p><a href="#top">[Top]</a></p>
+			</form>
+		</section>
+	</main>
+	<footer>
+		<p><small>Made with <span class="heart"></span> by Marc Vilella. Based in <a href="http://github.com/cbracco/html5-test-page">HTML5 test page</a> by @cbracco.</small></p>
+	</footer>
+</body>
+
+</html>

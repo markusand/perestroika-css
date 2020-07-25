@@ -1,0 +1,63 @@
+/* LIST DEFAULT --------------------------------------------------- */
+ul,
+ol {
+	margin: $spacing auto;
+
+	li {
+		// position: relative;
+		margin: $spacing 0;
+	}
+
+	ul,
+	ol { margin: 0 0 0 $spacing; }
+}
+
+ol {
+	counter-reset: item;
+
+	li::before {
+		color: $font-color--secondary;
+		font-size: $size-s;
+		content: counters(item, '.') '. ';
+		counter-increment: item;
+	}
+}
+
+/* DEFINITION LISTS ---------------------------------------------- */
+dl {
+	margin: $spacing auto;
+
+	dt {
+		margin: $spacing 0 $spacing / 2;
+		font-weight: bold;
+		white-space: nowrap;
+	}
+
+	dd {
+		margin: 0 $spacing;
+		color: $font-color--secondary;
+	}
+}
+
+/* DETAILS ------------------------------------------------------ */
+details {
+	border: $border;
+	border-radius: $radius;
+
+	summary {
+		@include chevron-down();
+
+		padding: $size-s $size;
+		list-style-type: none;
+		outline: none;
+		cursor: pointer;
+
+		&::marker { display: none; }
+		&::-webkit-details-marker { display: none; }
+	}
+
+	article,
+	section,
+	aside,
+	div { margin: $spacing; }
+}

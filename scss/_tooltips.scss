@@ -1,0 +1,35 @@
+[data-tooltip] {
+	position: relative;
+
+	&::before {
+		position: absolute;
+		bottom: 100%;
+		left: 50%;
+		z-index: 1;
+		display: none;
+		box-sizing: border-box;
+		margin: $size-xs 0;
+		padding: $size-s $size;
+		color: $white;
+		font-size: $size-s;
+		line-height: 1.25;
+		background: $black;
+		border-radius: $radius;
+		transform: translateX(-50%);
+		content: attr(data-tooltip);
+	}
+
+	&::after {
+		position: absolute;
+		bottom: 100%;
+		left: 50%;
+		display: none;
+		border: $size-xxs solid transparent;
+		border-top: $size-xxs solid $black;
+		transform: translateX(-50%);
+		content: '';
+	}
+
+	&:hover::before,
+	&:hover::after { display: block; }
+}

@@ -1,0 +1,47 @@
+table {
+	width: 100%;
+	margin: $spacing auto;
+	overflow: hidden;
+	font-size: 0.9rem;
+	caption-side: bottom;
+	border: $border;
+	border-radius: $radius;
+	border-collapse: separate;
+
+	th {
+		padding: $table-cell-padding;
+		font-weight: bold;
+		font-size: 0.75rem;
+		text-align: left;
+		text-transform: uppercase;
+		vertical-align: middle;
+		background: $table-header-color;
+	}
+
+	tbody {
+		td {
+			padding: $table-cell-padding;
+			color: $font-color--secondary;
+			text-align: left;
+			vertical-align: middle;
+			border-top: $border;
+
+			&:first-child { font-weight: 500; }
+		}
+	}
+
+	caption {
+		display: table-caption;
+		margin: $size-xs auto;
+		color: $font-color--secondary;
+		font-size: $size-s;
+	}
+
+	button,
+	select,
+	fieldset,
+	input {
+		margin: -$size-xs 0 !important;
+		vertical-align: middle;
+	}
+}

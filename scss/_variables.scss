@@ -1,0 +1,67 @@
+// Colors
+$white: #fff !default;
+$black: #000 !default;
+$grey: #999 !default;
+$grey--darkest: darken($grey, 45%) !default;
+$grey--darker: darken($grey, 35%) !default;
+$grey--dark: darken($grey, 15%) !default;
+$grey--light: lighten($grey, 10%) !default;
+$grey--lighter: lighten($grey, 25%) !default;
+$grey--lightest: lighten($grey, 35%) !default;
+$color-primary: #39f !default;
+$color-disabled: $grey--lightest !default;
+$color-error: #f65 !default;
+$color-warning: #ffe25c !default;
+$color-success: #93d393 !default;
+
+// Basic stylings
+$size: 16px !default;
+$size-xxs: 0.25rem !default;
+$size-xs: 0.5rem !default;
+$size-s: 0.75rem !default;
+$size-m: 1.125rem !default;
+$size-l: 1.25rem !default;
+$size-xl: 1.5rem !default;
+$size-xxl: 2rem !default;
+$size-xxxl: 2.5rem !default;
+
+$page-width: 820px !default;
+$spacing: $size-xl !default;
+$radius: 3px !default;
+$border: 1px solid $grey--lighter !default;
+
+// Typography
+$font-family: 'Helvetica Neue', 'Arial', sans-serif !default;
+$font-size: $size !default;
+$font-size--small: $size-s !default;
+$font-size--big: $size-xl !default;
+
+$font-color: $black !default;
+$font-color--secondary: $grey--dark !default;
+
+$link-color: $color-primary !default;
+$link-color--hover: darken($link-color, 15%) !default;
+$link-color--active: darken($link-color, 20%) !default;
+
+// Buttons
+$btn-txt-size: $size !default;
+$btn-padding: $size-xxs $size-xs !default;
+$btn-txt-color: $white !default;
+$btn-valign: baseline !default;
+
+// Inputs
+$input-margin: $spacing / 2 $size-xxs !default;
+$input-padding: $size-xxs $size-s !default;
+$input-txt-size: $size !default;
+$input-valign: $btn-valign !default;
+$label-txt-size: $size-s !default;
+$label-txt-color: $font-color--secondary !default;
+
+// Bars (progress & meter)
+$bar-height: $size-xs;
+
+$range-stroke: 2px;
+
+// Tables
+$table-header-color: $grey--lightest;
+$table-cell-padding: $size $size-m;

@@ -1,0 +1,194 @@
+/* DEFAULTS -------------------------------------------------------- */
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="url"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="week"],
+input[type="number"],
+input[type="search"],
+input[type="tel"],
+input[type=color],
+select,
+textarea,
+fieldset > em {
+	display: inline-block;
+	box-sizing: border-box;
+	margin: $input-margin;
+	padding: $input-padding;
+	color: $black;
+	font-weight: 300;
+	font-size: $input-txt-size;
+	font-family: $font-family;
+	font-style: normal;
+	line-height: 1.5;
+	white-space: nowrap;
+	vertical-align: $input-valign;
+	background: $white;
+	border: $border;
+	border-radius: $radius;
+	outline: 0;
+	appearance: none;
+
+	&:focus { border-color: $color-primary; }
+
+	&:invalid:not(:required),
+	&:required:not(:placeholder-shown):invalid { @include invalid; }
+
+	&:disabled { @include disabled; }
+
+	&:required {
+		background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><circle cx="12" cy="12" r="2" fill="#{$color-primary}" /></svg>');
+		background-repeat: no-repeat;
+		background-position: right center;
+	}
+}
+
+/* SEARCH INPUT ------------------------------------------------------ */
+input[type=search] {
+	padding-left: 1.5em;
+	background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M18.031 16.617l4.283 4.282-1.415 1.415-4.282-4.283A8.96 8.96 0 0 1 11 20c-4.968 0-9-4.032-9-9s4.032-9 9-9 9 4.032 9 9a8.96 8.96 0 0 1-1.969 5.617zm-2.006-.742A6.977 6.977 0 0 0 18 11c0-3.868-3.133-7-7-7-3.868 0-7 3.132-7 7 0 3.867 3.132 7 7 7a6.977 6.977 0 0 0 4.875-1.975l.15-.15z"/></svg>');
+	background-repeat: no-repeat;
+	background-position: 0.5em center;
+	background-size: 1em;
+}
+
+/* COLOR INPUT ------------------------------------------------------- */
+input[type=color] {
+	box-sizing: content-box;
+	width: 1.25em;
+	height: 1.5em;
+}
+
+/* SELECT INPUT ------------------------------------------------------ */
+select { @include chevron-down(); }
+
+/* TEXTAREA INPUT --------------------------------------------------- */
+textarea {
+	display: block;
+	margin: $input-margin;
+	margin-top: $spacing;
+	margin-bottom: $spacing;
+	overflow: auto;
+	white-space: normal;
+	resize: vertical;
+
+	label > &,
+	fieldset > & { margin: 0; }
+}
+
+/* CHECKBOX & RADIO ------------------------------------------------- */
+label > input[type=checkbox],
+label > input[type=radio] {
+	display: none !important;
+
+	& + *:not(button) {
+		display: flex;
+		align-items: center;
+		padding: $input-padding;
+		padding-left: 0;
+		color: $font-color--secondary;
+		line-height: 1.5;
+		cursor: pointer;
+
+		&::before {
+			display: inline-block;
+			box-sizing: border-box;
+			width: 1em;
+			height: 1em;
+			margin-right: $size-xxs;
+			border: $border;
+			border-radius: $radius;
+			transform: scale(0.7);
+			transition: all 0.2s ease-in-out;
+			content: '';
+		}
+	}
+
+	& + *:not(button):hover {
+		color: $font-color;
+		&::before { transform: scale(1); }
+	}
+
+	&:checked + *:not(button) {
+		color: $font-color;
+		font-weight: 400;
+
+		&::before {
+			background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><path fill='#{$color-primary}' fill-rule='evenodd' d='M21.826054,10.4197054 C22.4543095,9.83188211 23.4407558,9.86559854 24.0267195,10.4951978 C24.6114555,11.123478 24.5787456,12.1086228 23.9505411,12.6932873 L13.9518819,22.0253662 C13.6603617,22.2986663 13.2811707,22.444446 12.8892629,22.444446 C12.4816327,22.444446 12.0871877,22.2848677 11.7919503,21.9926428 L8.45535151,18.6560606 C7.84821616,18.0489253 7.84821616,17.063441 8.45535151,16.4563056 C9.06248686,15.8491703 10.0479711,15.8491703 10.6549609,16.4561601 L12.9263996,18.7265467 L21.826054,10.4197054 Z'/></svg>");
+			background-repeat: no-repeat;
+			background-position: 50% 50%;
+			background-size: 100% 100%;
+			border-color: $color-primary;
+			transform: scale(1);
+			animation: bounce 0.5s forwards ease-in-out;
+			// box-shadow: 0 3px 3px 1px rgba($color-primary, 0.1);
+		}
+	}
+}
+
+input[type=radio] + *::before { border-radius: 50% !important; }
+
+/* RANGE ----------------------------------------------------------- */
+@mixin range-thumb($diameter: $size) {
+	box-sizing: border-box;
+	width: $diameter;
+	height: $diameter;
+	background: $color-primary;
+	border: 0;
+	border-radius: 50%;
+	cursor: ew-resize;
+	appearance: none;
+}
+
+input[type='range'] {
+	display: inline-block;
+	width: 100%;
+	padding: $spacing 0;
+	border-radius: $radius;
+	outline: 0;
+	appearance: none;
+
+	&::-webkit-slider-runnable-track {
+		height: $range-stroke;
+		margin-top: $range-stroke / -2;
+		background: $grey--lightest;
+		appearance: none;
+	}
+
+	&::-webkit-slider-thumb {
+		@include range-thumb($size-l);
+
+		transform: translateY(-50%);
+	}
+
+	&::-moz-range-thumb { @include range-thumb($size-l); }
+
+	&::-moz-range-progress { background-color: $color-primary; }
+	&::-moz-range-track { background-color: $grey--lightest; }
+}
+
+/* LABELED INPUTS -------------------------------------------------- */
+label {
+	display: inline-block;
+	margin: $input-margin;
+	vertical-align: $input-valign;
+
+	em { @include label; }
+	&:focus-within em { color: $color-primary; }
+
+	input,
+	textarea,
+	select {
+		display: block !important;
+		width: 100%;
+		margin: 0 !important;
+	}
+}
+
+/* GROUPED INPUTS [!] EXPERIMENTAL -------------------------------- */
+fieldset { @include group; }

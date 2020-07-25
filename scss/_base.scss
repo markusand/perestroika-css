@@ -1,0 +1,25 @@
+body {
+	margin: $spacing;
+	text-align: center;
+}
+
+main,
+header,
+footer,
+article,
+section,
+aside,
+details {
+	max-width: $page-width;
+	margin: $spacing auto;
+	text-align: left;
+}
+
+hr {
+	width: 100%;
+	max-width: $page-width;
+	margin: $spacing auto;
+	border: $border;
+	border-bottom: 0;
+}
+
