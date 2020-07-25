@@ -59,10 +59,10 @@ $label-txt-size: $size-s !default;
 $label-txt-color: $font-color--secondary !default;
 
 // Bars (progress & meter)
-$bar-height: $size-xs;
+$bar-height: $size-xs !default;
 
-$range-stroke: 2px;
+$range-stroke: 2px !default;
 
 // Tables
-$table-header-color: $grey--lightest;
-$table-cell-padding: $size $size-m;
+$table-header-color: $grey--lightest !default;
+$table-cell-padding: $size $size-m !default;
