@@ -46,6 +46,8 @@ $primary-color: #7d7;
 button.is-alert { @include btn-color(#f65, #fff); }
 ```
 
+If using SCSS remember to add postcss autoprefixer to your build!
+
 **Option 2**
 
 Load from CDN. This option loads raw compiled CSS that cannot be customized.
