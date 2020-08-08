@@ -24,9 +24,8 @@ hr {
 }
 
 /* EXPERIMENTAL */
-aside > header,
-article > header,
-section > header {
+header,
+footer {
 	display: flex;
 	align-items: center;
 	margin: 0;
@@ -38,4 +37,12 @@ section > header {
 		flex: 0;
 		margin: 0 0 0 auto;
 	}
+}
+
+// Base modifier
+.is-wide {
+	display: block;
+	width: 100%;
+	margin-right: 0;
+	margin-left: 0;
 }

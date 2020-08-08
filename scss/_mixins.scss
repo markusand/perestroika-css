@@ -18,6 +18,18 @@
 	}
 }
 
+/* Prepend an SVG icon */
+@mixin pre-icon($icon) {
+	display: inline-block;
+	width: 1em;
+	height: 1em;
+	margin-right: $size-xxs;
+	vertical-align: middle;
+	background: url('data:image/svg+xml,#{$icon}') no-repeat center center;
+	background-size: 100%;
+	content: '';
+}
+
 /* Add a chevron icon for dropdown elements */
 @mixin chevron-down {
 	padding-right: 1.75em;
@@ -122,6 +134,7 @@
 	}
 }
 
+/* Make it block element with full width */
 @mixin block {
 	display: block;
 	width: 100%;
