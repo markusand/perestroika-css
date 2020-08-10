@@ -9,6 +9,7 @@ footer,
 article,
 section,
 aside,
+nav,
 details {
 	max-width: $page-width;
 	margin: $spacing auto;
@@ -28,14 +29,13 @@ header,
 footer {
 	display: flex;
 	align-items: center;
-	margin: 0;
 
-	& > * { margin: 0; }
+	& > * { margin: 0 !important; }
 
 	// Aside inside header is positioned on the right
 	& > aside {
 		flex: 0;
-		margin: 0 0 0 auto;
+		margin: 0 0 0 auto !important;
 	}
 }
 
